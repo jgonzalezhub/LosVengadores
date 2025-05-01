@@ -1,9 +1,18 @@
 package disSoftware.proyectoFinal;
 
-public interface Enemy {
-	String getName();
-    Integer getPower();
-    Integer getLives();
-	String getSuperPower();
+public abstract class Enemy extends Character{
+	
+    
 
+
+
+
+    //CONSTRUCTOR
+    public Enemy(String name, 
+                 Integer power,
+                 Integer health,
+                 String specialText,
+                 Integer specialNumber){
+        super(name, power, health, specialText, specialNumber);
+    }
 }
