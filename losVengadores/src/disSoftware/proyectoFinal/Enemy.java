@@ -2,9 +2,8 @@ package disSoftware.proyectoFinal;
 
 public abstract class Enemy extends Character{
 	
+    protected Strategy strategy;
     
-
-
 
 
     //CONSTRUCTOR
