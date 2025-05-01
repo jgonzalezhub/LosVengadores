@@ -4,6 +4,7 @@ public abstract class Character {
     protected String name;
     protected Integer power;
 	protected Integer health;
+	protected Integer defense;
 
     //Se puede cambiar en la estrategia
     protected String specialText;
@@ -17,6 +18,7 @@ public abstract class Character {
     public Character(String name, 
                      Integer power,
                      Integer health,
+                     Integer defense,
                      String specialText,
                      Integer specialNumber){
        this.name = name;
