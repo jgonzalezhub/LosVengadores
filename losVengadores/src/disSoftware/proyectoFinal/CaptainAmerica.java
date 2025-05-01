@@ -1,28 +1,16 @@
 package disSoftware.proyectoFinal;
 
-public class CaptainAmerica implements Enemy { // tiene que ser interfaz que extienda a enemy 
+public class CaptainAmerica extends Enemy {  
 
-	@Override
-	public String getName() {
-		// prueba
-		return null;
-	}
+	public CaptainAmerica(String name, 
+                 Integer power,
+                 Integer health,
+                 String specialText,
+                 Integer specialNumber){
+        super(name, power, health, specialText, specialNumber);
+    }
 
-	@Override
-	public Integer getPower() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
+	
 
-	@Override
-	public Integer getLives() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getSuperPower() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }
