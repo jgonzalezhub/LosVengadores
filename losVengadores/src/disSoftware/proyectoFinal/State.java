@@ -1,5 +1,6 @@
 package disSoftware.proyectoFinal;
 
-public class State {
-
+public interface State {
+    public void handle(Character character);
+    public String getName();
 }
