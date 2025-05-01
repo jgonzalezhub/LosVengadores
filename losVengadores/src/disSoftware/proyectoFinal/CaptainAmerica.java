@@ -1,6 +1,6 @@
 package disSoftware.proyectoFinal;
 
-public class CaptainAmerica implements Enemy {
+public class CaptainAmerica implements Enemy { // tiene que ser interfaz que extienda a enemy 
 
 	@Override
 	public String getName() {

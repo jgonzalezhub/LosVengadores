@@ -1,6 +1,6 @@
 package disSoftware.proyectoFinal;
 
-public class World1CaptainAmerica implements Tank {
+public class World1CaptainAmerica implements Tank { // tiene que implementar a capitanamerica como interfaz 
 
 	@Override
 	public String getName() {
