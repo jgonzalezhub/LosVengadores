@@ -40,7 +40,7 @@ public abstract class Character {
         return specialText;
     }
     public void setState(State state){
-        this.State = state;
+        this.state = state;
     }
 
 

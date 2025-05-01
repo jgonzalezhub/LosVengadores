@@ -1,5 +1,5 @@
 package disSoftware.proyectoFinal;
 
-public interface Tank extends Enemy {
+public class State {
 
 }

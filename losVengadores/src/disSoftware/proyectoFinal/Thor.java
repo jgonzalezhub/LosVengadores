@@ -1,6 +1,6 @@
 package disSoftware.proyectoFinal;
 
-public class Thor implements Enemy { // tiene que ser interfaz que extienda a enemy 
+public class Thor extends Enemy { // tiene que ser interfaz que extienda a enemy 
 
 	@Override
 	public String getName() {
