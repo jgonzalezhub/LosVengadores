@@ -23,7 +23,8 @@ public abstract class Character {
                      Integer specialNumber){
        this.name = name;
        this.power = power;
-       this. health = health;
+       this.health = health;
+       this.defense=defense;
        this.specialText = specialText;
        this.specialNumber = specialNumber;                 
     }
@@ -47,10 +48,13 @@ public abstract class Character {
     public Boolean isAlive(){
         return health > 0;
     }
-    public void Integer getPower(){
+    public Integer getPower(){
     	return this.power;
     }
-
+    
+    public Integer getDefense(){
+    	return this.defense; 
+    }
 
 
 }

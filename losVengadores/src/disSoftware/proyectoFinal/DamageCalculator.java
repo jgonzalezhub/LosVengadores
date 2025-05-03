@@ -1,6 +1,6 @@
 package disSoftware.proyectoFinal;
 
-public class DamageCalculator {
+public class DamageCalculator{
     private static DamageCalculator instance;
     
     private DamageCalculator(){
@@ -14,10 +14,16 @@ public class DamageCalculator {
     }
 
     public Integer calculateDamage(Character attacker, Character defender){
-
+    	
+    	
         Integer damage;
-        damage = attacker.power - defender.defense;
+        damage = attacker.getPower() -defender.getDefense();
 
         return damage;
     }
+    
+    public static void main(String[] args) {
+		System.out.println("hola");
+	}
+
 }
