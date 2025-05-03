@@ -17,7 +17,7 @@ public class DamageCalculator{
     	
     	
         Integer damage;
-        damage = attacker.getPower() -defender.getDefense();
+        damage = attacker.getPower() - defender.getDefense();
 
         return damage;
     }
