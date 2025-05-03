@@ -70,5 +70,29 @@ public abstract class Character {
     	return this.defense; 
     }
 
+	public Integer getSpecialNumber() {
+		return specialNumber;
+	}
+
+	public void setSpecialNumber(Integer specialNumber) {
+		this.specialNumber = specialNumber;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setPower(Integer power) {
+		this.power = power;
+	}
+
+	public void setHealth(Integer health) {
+		this.health = health;
+	}
+
+	public void setSpecialText(String specialText) {
+		this.specialText = specialText;
+	}
+
 
 }
