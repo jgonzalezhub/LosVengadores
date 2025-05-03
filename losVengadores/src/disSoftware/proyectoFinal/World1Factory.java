@@ -6,6 +6,7 @@ public class World1Factory implements EnemyFactory {
 	public Enemy createIronMan() {
 		Enemy ironMan = new IronMan("Iron-Man", 20, 100,40, "JARVIS CLIP THAT", 30);
 		return ironMan;
+		//Prueba
 	}
 
 	@Override
