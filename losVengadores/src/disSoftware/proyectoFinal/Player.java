@@ -10,4 +10,6 @@ public class Player extends Character{
                  Integer specialNumber){
         super(name, power, health,defense, specialText, specialNumber);
     }
+    
+    
 }

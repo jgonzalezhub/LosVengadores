@@ -2,26 +2,8 @@ package disSoftware.proyectoFinal;
 import java.util.Scanner;
 
 public class GameController{
-    private static GameController instance;
+    private DamageCalculator calculator;
     
-    private GameController(){
-    }
-
-    public static GameController getInstance(){
-        if(instance == null){
-            instance = new GameController();
-        }
-        return instance;
-    }
-
-    public Integer calculateDamage(Character attacker, Character defender){
-    	
-    	
-        Integer damage;
-        damage = attacker.getPower() - defender.getDefense();
-
-        return damage;
-    }
     public Enemy elegirPersonaje(Integer numerin,World1Factory character) {
     	switch(numerin) {
 		case 1: 
@@ -44,21 +26,41 @@ public class GameController{
     	}
     	return null;
     }
+    public void showMenu(World1Factory player,World1Factory enemy) {
+    	//System.out.println("Jugador:"+ player.);
+    	//System.out.println("Enemigo:"+ enemy.);
+    	 System.out.println("╔══════════════════════════════╗");
+         System.out.println("║        🦸‍♂️ AVENGERS MENU 🦸‍♀️       ║");
+         System.out.println("╠══════════════════════════════╣");
+         System.out.println("║ 1️.  Attack ⚔️                      ║");
+         System.out.println("║ 2️.  Defend 🛡️                     ║");
+         System.out.println("║ 3️.  Exit 👋                        ║");
+         System.out.println("╚══════════════════════════════╝");
+    	
+    }
+    
+    public void fight(World1Factory player,World1Factory enemy) {
+    	Integer playerAction=0;
+    	while(player.health <= 0) {
+    		showMenu(player,enemy);
+    			
+    	}
+    }
     
     public void play() {
     	// estamos en el primer nivel
     	Integer numerin = 0;
-    	Integer random =0;
+    	Integer random =(int)(Math.random()*4)+1;
     	Scanner scanner = new Scanner(System.in);
     	World1Factory player= new World1Factory();
     	World1Factory enemy= new World1Factory();
     	System.out.println("--------------Avengers----------------\n Elige personaje: \n|1.Capitan America|\n|2. Iron-Man|\n|3.Spider-Man|\n|4. Thor|\n----------------");
     	numerin=scanner.nextInt();
     	this.elegirPersonaje(numerin,player);
-    	this.elegirPersonaje(numerin,enemy);
-    	while(true) {
-    		System.out.println("----------Avengers------------");
-    	}
+    	this.elegirPersonaje(random,enemy);
+    	System.out.println("Va a comenzar la pelea");
+    	fight(player,enemy);
+    	
     	
     }
 
