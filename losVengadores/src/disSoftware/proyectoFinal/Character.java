@@ -28,6 +28,20 @@ public abstract class Character {
        this.specialText = specialText;
        this.specialNumber = specialNumber;                 
     }
+    
+    public void takeDamage(int damage) {
+    	health-=damage;
+    	if(health<=0) {
+    		health=0;
+    		System.out.println(name + "ha sido derrotado.");
+    		setState(new ParalyzedState());
+    	}else if (health < 30) {
+    		setState(new WoundedState());
+    	}else {
+    		setState(new ActiveState());
+    	}
+    }
+    
 
     //GETTERS Y SETTERS
     public String getName() {

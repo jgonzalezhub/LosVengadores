@@ -6,4 +6,5 @@ public class SpiderMan extends Enemy{
 		super(name, power, health,defense,specialText, specialNumber);
 		// TODO Auto-generated constructor stub
 	}
+	//Cuando paralice se convierte en spiderman simbionte
 }
