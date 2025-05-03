@@ -44,13 +44,12 @@ public abstract class Character {
     public void setState(State state){
         this.state = state;
     }
-
-
     public Boolean isAlive(){
         return health > 0;
     }
-
-
+    public void Integer getPower(){
+    	return this.power;
+    }
 
 
 

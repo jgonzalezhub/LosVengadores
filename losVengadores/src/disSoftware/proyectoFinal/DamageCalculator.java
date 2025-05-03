@@ -16,7 +16,7 @@ public class DamageCalculator {
     public Integer calculateDamage(Character attacker, Character defender){
 
         Integer damage;
-        damage = attacker.power;
+        damage = attacker.power - defender.defense;
 
         return damage;
     }
