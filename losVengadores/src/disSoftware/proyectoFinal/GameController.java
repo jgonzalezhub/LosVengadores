@@ -4,6 +4,29 @@ import java.util.Scanner;
 public class GameController{
     private DamageCalculator calculator;
     
+    public Player elegirPersonajePlayer(Integer numerin,PlayerFactory character) {
+    	switch(numerin) {
+		case 1: 
+			System.out.println("Has elegido a Capitan America");
+			return character.createCaptainAmerica();
+		case 2: 
+			System.out.println("Has elegido a Iron-Man");
+			return character.createIronMan();
+			
+		case 3: 
+			System.out.println("Has elegido a Spider-Man");
+			return character.createSpiderMan();
+			
+		case 4:
+			System.out.println("Has elegido a Thor");
+			return character.createThor();
+		default:
+			System.out.println("El personaje que intentas utilizar no esta disponible");
+			
+    	}
+    	return null;
+    }
+    
     public Enemy elegirPersonajelevel1(Integer numerin,World1Factory character) {
     	switch(numerin) {
 		case 1: 
@@ -49,7 +72,7 @@ public class GameController{
     	}
     	return null;
     }
-    public void showMenu(Enemy player,Enemy enemy) {
+    public void showMenu(Player player,Enemy enemy) {
     	System.out.println("Jugador:"+ player.getName());
     	System.out.println("Enemigo:"+ enemy.getName());
     	System.out.println("╔══════════════════════════════╗");
@@ -61,31 +84,18 @@ public class GameController{
     	
     }
     
-    public Integer fight(Enemy player,Enemy enemy) {
+    public Integer fight(Player player,Enemy enemy) {
 // esta funcion tambien la puede utilizar los bot solo que habria que poner que si es enemy los valores sean random es decir que elija 1 o 2 aleatoriamente
-    	DamageCalculator calculator = DamageCalculator.getInstance();
-    	Integer playerAction=0;
-    	Scanner scanner = new Scanner(System.in);
-    	int damage1=0;
-    	int damage2=0;
-    	while(player.getHealth() > 0 && enemy.getHealth() > 0) {
-    		showMenu(player,enemy);
-    		playerAction=scanner.nextInt();
-    		switch(playerAction) {
-    			case 1:
-    				damage1=calculator.calculateDamage(player, enemy);
-    				enemy.setHealth(enemy.getHealth()-damage1);
-    				System.out.println(player.getName()+ "ataca y genera "+ damage1+ "de danio sobre "+ enemy.getName());
-    			break;
-    			case 2:
-    				damage1=calculator.calculateDamage(enemy,player);
-    				if(damage1==0) {
-    					System.out.println(player.getName()+" se protege ante el ataque");
-    				}else {
-    					player.setHealth(enemy.health-damage1);
-        				System.out.println(player.getName()+ "ataca y genera "+ damage1+ "de danio sobre "+ enemy.getName());
-    				}
-    			break;
+    	boolean playerTurn = Math.random() > 0.5;	
+    	while(player.isAlive() && enemy.isAlive()) {
+    		
+    		if(playerTurn) {
+    			showMenu(player,enemy);
+    			player.performAction(enemy);
+        		playerTurn=!playerTurn;
+    		}else {
+    			enemy.performAction(player);
+        		playerTurn=!playerTurn;
     		}
     	}
     	if(player.getHealth() <= 0) {
@@ -100,17 +110,18 @@ public class GameController{
     
     public void play() {
     	// estamos en el primer nivel
-    	Integer numerin = 0;
+    	Integer number = 0;
     	Integer resultadoNivel1;
     	Integer resultadoNivel2;
     	Integer random =(int)(Math.random()*4)+1;
     	Scanner scanner = new Scanner(System.in);
+    	PlayerFactory playerFactory= new PlayerFactory();
     	World1Factory factory= new World1Factory();
-    	Enemy player;
+    	Player player;
     	Enemy enemy;
     	showCharacters();
-    	numerin=scanner.nextInt();
-    	player=this.elegirPersonajelevel1(numerin,factory);
+    	number=scanner.nextInt();
+    	player=this.elegirPersonajePlayer(number,playerFactory);
     	enemy = this.elegirPersonajelevel1(random,factory);
     	System.out.println("Va a comenzar la pelea");
     	resultadoNivel1=fight(player,enemy);
@@ -122,13 +133,13 @@ public class GameController{
     	
     	// nivel 2
     	System.out.println("viajando al nivel 2");
-    	numerin=0;
+    	number=0;
     	player=null;
     	enemy=null;
     	World2Factory factoryLvl2= new World2Factory();
     	showCharacters();
-    	numerin=scanner.nextInt();
-    	player=this.elegirPersonajelevel1(numerin,factory);
+    	number=scanner.nextInt();
+    	player=this.elegirPersonajePlayer(number,playerFactory);
     	enemy = this.elegirPersonajelevel1(random,factory);
     	System.out.println("Va a comenzar la pelea");
     	resultadoNivel2=fight(player,enemy);

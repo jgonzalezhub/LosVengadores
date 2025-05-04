@@ -11,4 +11,8 @@ public abstract class Enemy extends Character{
     public void setStrategy(Strategy strategy){
         this.strategy = strategy;
     }
+    
+    public void performAction(Character opponent) {
+    	
+    }
 }

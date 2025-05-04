@@ -1,6 +1,5 @@
 package disSoftware.proyectoFinal;
 
 public interface Strategy {
-    //Por ahora solo void sin parametros
-    public void attack();
+    Integer execute(Enemy self, Character opponent);
 }

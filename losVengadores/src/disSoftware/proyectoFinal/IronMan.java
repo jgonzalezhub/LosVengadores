@@ -6,5 +6,7 @@ public class IronMan extends Enemy {
 		super(name, power, health,defense, specialText, specialNumber);
 		// TODO Auto-generated constructor stub
 	}
-
+	protected void decideNextStrategy(Character opponent) {
+        setStrategy(new IronManStrategy());
+    }
 }
