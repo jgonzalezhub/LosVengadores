@@ -17,11 +17,13 @@ public abstract class Enemy extends Character{
     public void performAction(Character opponent) {
         Integer enemyAction = (int)(Math.random() * 2);
         
-        Integer damage1=0;
+        Integer defense=-1;
         Integer damage2=0;
 
         DamageCalculator calculator = DamageCalculator.getInstance();
         
+        defense = calculator.defense(this, opponent);
+
 		//Comprobamos el estado
 		if (state != null) {
             state.handle(this);
@@ -37,12 +39,11 @@ public abstract class Enemy extends Character{
                     strategy.execute(this, opponent);
 				break;
 				case 2:
-					damage1=calculator.calculateDamage(this,opponent);
-					if(damage1==0) {
+					if(defense==0) {
 						System.out.println(this.getName()+" se protege ante el ataque");
 					}else {
-						this.setHealth(opponent.health-damage1);
-						System.out.println(this.getName()+ "ataca y genera "+ damage1+ "de daño sobre "+ opponent.getName());
+						this.setHealth(opponent.health-calculator.calculateDamage(this,opponent));
+						System.out.println(this.getName()+ "ataca y genera "+ calculator.calculateDamage(this,opponent)+ "de daño sobre "+ opponent.getName());
 					}
 				break;
 				}

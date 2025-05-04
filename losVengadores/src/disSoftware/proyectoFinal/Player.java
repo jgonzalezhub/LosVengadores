@@ -17,11 +17,13 @@ public class Player extends Character{
     	
     	Integer playerAction=0;
     	Scanner scanner = new Scanner(System.in);
-    	Integer damage1=0;
+    	Integer defense = -1;
     	Integer damage2=0;
     	DamageCalculator calculator = DamageCalculator.getInstance();
 		playerAction=scanner.nextInt();
       
+		defense = calculator.defense(this, opponent);
+
 		//Comprobamos el estado
 		if (state != null) {
             state.handle(this);
@@ -42,12 +44,11 @@ public class Player extends Character{
 					System.out.println(opponent.getName() + " recibe " + totalDamage + " de daño. Vida restante: " + opponent.getHealth());
 				break;
 				case 2:
-					damage1=calculator.calculateDamage(this,opponent);
-					if(damage1==0) {
-						System.out.println(this.getName()+" se protege ante el ataque");
+					if(defense==0) {
+						System.out.println(this.getName()+" se protege ante el ataque.");
 					}else {
-						this.setHealth(opponent.health-damage1);
-						System.out.println(this.getName()+ " ataca y genera "+ damage1+ " de daño sobre "+ opponent.getName());
+						this.setHealth(opponent.health-calculator.calculateDamage(this, opponent));
+						System.out.println(this.getName()+ " ataca y genera "+ calculator.calculateDamage(this, opponent)+ " de daño sobre "+ opponent.getName());
 					}
 				break;
 				}
