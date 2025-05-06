@@ -9,25 +9,25 @@ public class Player extends Character{
                  Integer health,
                  Integer defense,
                  String specialText,
-                 Integer specialNumber){
-        super(name, power, health,defense, specialText, specialNumber);
+                 Integer specialNumber,
+                 State state){
+        super(name, power, health,defense, specialText, specialNumber, state);
     }
     
     public void performAction(Enemy opponent) {
     	
     	Integer playerAction=0;
     	Scanner scanner = new Scanner(System.in);
-    	Integer defense = -1;
+    	Integer defense1 = 0;
     	Integer damage2=0;
     	DamageCalculator calculator = DamageCalculator.getInstance();
 		playerAction=scanner.nextInt();
       
-		defense = calculator.defense(this, opponent);
+		
+		
 
 		//Comprobamos el estado
-		if (state != null) {
-            state.handle(this);
-
+		if (state == null) {            
             // Si está paralizado, se podría interrumpir la acción:
             if (state instanceof ParalyzedState) {
                 System.out.println(name + " está paralizado y no puede actuar.");
@@ -44,11 +44,13 @@ public class Player extends Character{
 					System.out.println(opponent.getName() + " recibe " + totalDamage + " de daño. Vida restante: " + opponent.getHealth());
 				break;
 				case 2:
-					if(defense==0) {
+					defense1 = calculator.calculateDefense(opponent, this);
+					if(defense1==0) {
 						System.out.println(this.getName()+" se protege ante el ataque.");
 					}else {
-						this.setHealth(opponent.health-calculator.calculateDamage(this, opponent));
-						System.out.println(this.getName()+ " ataca y genera "+ calculator.calculateDamage(this, opponent)+ " de daño sobre "+ opponent.getName());
+						defense1 = calculator.calculateDefense(opponent, this);
+						this.setHealth(this.health-defense1);
+						System.out.println(opponent.getName()+ " ataca y genera "+ opponent.getPower() + " de daño sobre "+ this.getName());
 					}
 				break;
 				}

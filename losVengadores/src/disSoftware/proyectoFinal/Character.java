@@ -20,13 +20,15 @@ public abstract class Character {
                      Integer health,
                      Integer defense,
                      String specialText,
-                     Integer specialNumber){
+                     Integer specialNumber,
+                     State state){
        this.name = name;
        this.power = power;
        this.health = health;
        this.defense=defense;
        this.specialText = specialText;
-       this.specialNumber = specialNumber;                 
+       this.specialNumber = specialNumber;  
+       this.state = state;
     }
     
     public void takeDamage(int damage) {
@@ -34,7 +36,6 @@ public abstract class Character {
     	if(health<=0) {
     		health=0;
     		System.out.println(name + " ha sido derrotado.");
-    		setState(new ParalyzedState());
     	}else if (health < 30) {
     		setState(new WoundedState());
     	}else {
