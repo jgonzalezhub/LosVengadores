@@ -52,6 +52,15 @@ public class Player extends Character{
 						System.out.println(opponent.getName()+ " ataca y genera "+ opponent.getPower() + " de daño sobre "+ this.getName());
 					}
 				break;
+				
+				case 3:
+					System.out.println("Saliendo.......");
+					System.exit(0);
+				break;
+				
+				default:
+					System.out.println("No has hecho nada, el enemigo te ataca");
+				break;
 				}
 			
         
