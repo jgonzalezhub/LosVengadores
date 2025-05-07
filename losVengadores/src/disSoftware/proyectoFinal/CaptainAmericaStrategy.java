@@ -6,7 +6,7 @@ public class CaptainAmericaStrategy implements Strategy {
         
     	int damage = DamageCalculator.getInstance().calculateDamage(self, opponent);
     	System.out.println("Capitan America da una serie de golpes y genera " + self.getPower() + " de daño");
-    	if(self.getHealth()<=50) {
+    	if(self.getHealth()<=30) {
     		System.out.println(self.getName() + " usa su escudo contra " + opponent.getName());    		
 	        damage += self.getSpecialNumber();
 	        String ultimateText=self.getSpecialText();

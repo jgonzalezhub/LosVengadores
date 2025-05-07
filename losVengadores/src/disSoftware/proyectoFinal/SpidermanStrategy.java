@@ -6,7 +6,7 @@ public class SpidermanStrategy implements Strategy {
     	
     	int damage = DamageCalculator.getInstance().calculateDamage(self, opponent);
     	System.out.println("Spiderman pega un combo de puñetazos y genera " + self.getPower() + " de daño"); 
-    	if(self.getHealth()<=50) {
+    	if(self.getHealth()<=30) {
 	        System.out.println(self.getName() + " lanza telarañas a " + opponent.getName());
 	        damage += self.getSpecialNumber();
 	        String ultimateText=self.getSpecialText();
