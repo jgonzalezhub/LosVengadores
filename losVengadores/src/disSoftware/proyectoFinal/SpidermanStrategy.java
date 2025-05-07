@@ -14,6 +14,6 @@ public class SpidermanStrategy implements Strategy {
 	        System.out.println(opponent.getName() + " recibe " + damage + " de daño extra.");
     	}
 		opponent.takeDamage(damage);
-	        return damage;
+	    return damage;
     }
 }
