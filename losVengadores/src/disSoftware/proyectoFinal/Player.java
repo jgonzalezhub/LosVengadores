@@ -54,7 +54,7 @@ public class Player extends Character{
 				break;
 				
 				case 3:
-					System.out.println("Saliendo.......");
+					System.out.println("Saliendo......."); // sale del juego 
 					System.exit(0);
 				break;
 				
