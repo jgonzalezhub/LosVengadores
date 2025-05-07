@@ -9,8 +9,7 @@ public class LightningAttack extends ActionDecorator {
     @Override
     public Integer execute(Player attacker, Enemy defender) {
         Integer damage = wrapped.execute(attacker, defender);
-        Integer lightningDamage = 3;
-        defender.takeDamage(lightningDamage);
+        Integer lightningDamage = 3;       
         return damage + lightningDamage;
     }
 

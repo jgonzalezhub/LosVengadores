@@ -30,18 +30,18 @@ public class GameController{
     public Enemy elegirPersonajelevel1(Integer numerin,World1Factory character) {
     	switch(numerin) {
 		case 1: 
-			System.out.println("Has elegido a Capitan America");
+			System.out.println("El enemigo es Capitan America");
 			return character.createCaptainAmerica();
 		case 2: 
-			System.out.println("Has elegido a Iron-Man");
+			System.out.println("El enemigo es Iron-Man");
 			return character.createIronMan();
 			
 		case 3: 
-			System.out.println("Has elegido a Spider-Man");
+			System.out.println("El enemigo es Spider-Man");
 			return character.createSpiderMan();
 			
 		case 4:
-			System.out.println("Has elegido a Thor");
+			System.out.println("El enemigo es Thor");
 			return character.createThor();
 		default:
 			System.out.println("El personaje que intentas utilizar no esta disponible");
@@ -53,18 +53,18 @@ public class GameController{
     public Enemy elegirPersonajelevel2(Integer numerin,World2Factory character) {
     	switch(numerin) {
 		case 1: 
-			System.out.println("Has elegido a Capitan America");
+			System.out.println("El enemigo es Capitan America");
 			return character.createCaptainAmerica();
 		case 2: 
-			System.out.println("Has elegido a Iron-Man");
+			System.out.println("El enemigo es Iron-Man");
 			return character.createIronMan();
 			
 		case 3: 
-			System.out.println("Has elegido a Spider-Man");
+			System.out.println("El enemigo es Spider-Man");
 			return character.createSpiderMan();
 			
 		case 4:
-			System.out.println("Has elegido a Thor");
+			System.out.println("El enemigo es Thor");
 			return character.createThor();
 		default:
 			System.out.println("El personaje que intentas utilizar no esta disponible");
@@ -86,18 +86,16 @@ public class GameController{
     
     public Integer fight(Player player,Enemy enemy) {
 // esta funcion tambien la puede utilizar los bot solo que habria que poner que si es enemy los valores sean random es decir que elija 1 o 2 aleatoriamente
-    	boolean playerTurn = Math.random() > 0.5;	
-    	while(player.isAlive() && enemy.isAlive()) {
-    		
-    		if(playerTurn) {
-    			showMenu(player,enemy);
-    			player.performAction(enemy);
-        		playerTurn=!playerTurn;
-    		}else {
-    			enemy.performAction(player);
-        		playerTurn=!playerTurn;
-    		}
-    	}
+    	boolean playerTurn = Math.random() > 0.5;
+    	while (player.isAlive() && enemy.isAlive()) {
+            if (playerTurn) {
+            	showMenu(player, enemy);
+                player.performAction(enemy);	
+            } else {
+                enemy.performAction(player);
+            }
+            playerTurn = !playerTurn;
+        }
     	if(player.getHealth() <= 0) {
     		return 0;
     	}

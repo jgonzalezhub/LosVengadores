@@ -41,6 +41,7 @@ public class Player extends Character{
 	
 					System.out.println(name + " usa: " + action.getDescription());
 					Integer totalDamage = action.execute(this, opponent);
+					opponent.takeDamage(totalDamage);
 					System.out.println(opponent.getName() + " recibe " + totalDamage + " de daño. Vida restante: " + opponent.getHealth());
 				break;
 				case 2:

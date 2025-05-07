@@ -31,11 +31,12 @@ public abstract class Character {
        this.state = state;
     }
     
-    public void takeDamage(int damage) {
+    public void takeDamage(Integer damage) {
     	health-=damage;
     	if(health<=0) {
     		health=0;
     		System.out.println(name + " ha sido derrotado.");
+            setState(new ParalyzedState());
     	}else if (health < 30) {
     		setState(new WoundedState());
     	}else {
