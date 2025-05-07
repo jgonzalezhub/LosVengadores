@@ -15,6 +15,6 @@ public class LightningAttack extends ActionDecorator {
 
     @Override
     public String getDescription() {
-        return wrapped.getDescription() + " + ha quedado electrocutado";
+        return wrapped.getDescription() + " embuido con rayos ";
     }
 }

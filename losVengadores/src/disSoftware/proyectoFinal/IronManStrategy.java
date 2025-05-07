@@ -5,6 +5,7 @@ public class IronManStrategy implements Strategy {
     public Integer execute(Enemy self, Character opponent) {
     	
     	int damage = DamageCalculator.getInstance().calculateDamage(self, opponent);
+    	System.out.println("Iron Man dispara de su cañon de energia y genera " + self.getPower() + " de daño");
     	if(self.getHealth()<=50) {
 	        System.out.println(self.getName() + " usa su unirayo a " + opponent.getName());
 	        damage += self.getSpecialNumber();
@@ -12,6 +13,7 @@ public class IronManStrategy implements Strategy {
 	        System.out.println(ultimateText );
 	        System.out.println(opponent.getName() + " recibe " + damage + " de daño extra.");
     	}
-	        return damage;
+		opponent.takeDamage(damage);
+	    return damage;
     }
 }
