@@ -127,7 +127,16 @@ public Player elegirPersonajePlayer(PlayerFactory character) {
     }
     
     public void showCharacters() {
-    	System.out.println("--------------Avengers----------------\n Elige personaje: \n|1.Capitan America|\n|2. Iron-Man|\n|3.Spider-Man|\n|4. Thor|\n----------------");
+    	System.out.println("╔═══════════════════════════════╗");
+        System.out.println("║     🦸 AVENGERS PLAYERS 🦸	║");//Tiene que estar asi descuadrado para que se vea bien por pantalla
+        System.out.println("╠═══════════════════════════════╣");
+        System.out.println("║ 1. CAPITÁN AMÉRICA   🛡️      	║");
+        System.out.println("║ 2. IRON MAN          🔧      	║");
+        System.out.println("║ 3. SPIDER-MAN        🕷️      	║");
+        System.out.println("║ 4. THOR              ⚡      	║");
+        System.out.println("╚═══════════════════════════════╝");
+        System.out.println("Elige un personaje (1-4):");
+    
     }
     
     public void play() {

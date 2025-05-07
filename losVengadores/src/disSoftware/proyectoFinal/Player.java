@@ -22,7 +22,7 @@ public class Player extends Character{
     	Integer damage2=0;
     	String input="";
     	DamageCalculator calculator = DamageCalculator.getInstance();
-		playerAction=scanner.nextInt();
+		//playerAction=scanner.nextInt();
       
 		
 		
