@@ -85,7 +85,6 @@ public class GameController{
     }
     
     public Integer fight(Player player,Enemy enemy) {
-// esta funcion tambien la puede utilizar los bot solo que habria que poner que si es enemy los valores sean random es decir que elija 1 o 2 aleatoriamente
     	Integer playerTurn = 1;
     	while (player.isAlive() && enemy.isAlive()) {
             if (playerTurn == 1) {

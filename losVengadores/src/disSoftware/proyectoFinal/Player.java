@@ -25,14 +25,12 @@ public class Player extends Character{
       
 		
 		
-
-		//Comprobamos el estado
-		if (state == null) {            
+		           
             // Si está paralizado, se podría interrumpir la acción:
             if (state instanceof ParalyzedState) {
                 System.out.println(name + " está paralizado y no puede actuar.");
                 return;
-            }else{
+            }
 				switch(playerAction) {
 				case 1:
 					Action action = new BasicAttack();
@@ -55,8 +53,8 @@ public class Player extends Character{
 					}
 				break;
 				}
-			}
-        }
+			
+        
     	
     }
     
