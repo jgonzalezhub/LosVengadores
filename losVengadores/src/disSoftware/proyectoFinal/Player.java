@@ -40,7 +40,7 @@ public class Player extends Character{
             		try {
             	        playerAction = Integer.parseInt(input);
             	    } catch (NumberFormatException e) {
-            	        System.out.println("Entrada inválida. Por favor, introduce un número entre 1 y 2.");
+            	        System.out.println("Entrada inválida. Por favor, introduce un número entre 1 y 3.");
             	        continue;
             	    }
             		
@@ -64,8 +64,12 @@ public class Player extends Character{
     						System.out.println(opponent.getName()+ " ataca y genera "+ opponent.getPower() + " de daño sobre "+ this.getName());
     					}
     				break;
+    				case 3:
+    					System.out.println("saliendo......");
+    					System.exit(0);
+    				break;	
     				default:
-    					System.out.println("Entrada inválida. Por favor, introduce un número entre 1 y 2.");
+    					System.out.println("Entrada inválida. Por favor, introduce un número entre 1 y 3.");
     				break;
     				}
             	}
