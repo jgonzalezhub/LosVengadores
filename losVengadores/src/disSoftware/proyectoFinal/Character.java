@@ -28,7 +28,7 @@ public abstract class Character {
        this.defense=defense;
        this.specialText = specialText;
        this.specialNumber = specialNumber;  
-       this.state = state;
+       this.state = new ActiveState();
     }
     
     public void takeDamage(Integer damage) {
@@ -55,9 +55,9 @@ public abstract class Character {
     public String getSpecialText(){
         return specialText;
     }
-    public void setState(State state){
-        this.state = state;
-    }
+    public void setState(State newState){
+    	this.state = newState;
+    }  
     public Boolean isAlive(){
         return health > 0;
     }
