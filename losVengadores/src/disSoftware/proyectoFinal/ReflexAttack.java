@@ -14,7 +14,7 @@ public class ReflexAttack extends ActionDecorator{
 
     @Override
     public String getDescription() {
-        return wrapped.getDescription() + " Assemble ";
+        return wrapped.getDescription() + " ASSEMBLE ";
     }
 
 }
