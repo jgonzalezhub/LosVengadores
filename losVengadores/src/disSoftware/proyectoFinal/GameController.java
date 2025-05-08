@@ -107,7 +107,8 @@ public Player elegirPersonajePlayer(PlayerFactory character) {
     	System.out.println("╠══════════════════════════════╣");
     	System.out.println("║ 1️.  Attack ⚔️                ║");
     	System.out.println("║ 2️.  Defend 🛡️                ║");
-    	System.out.println("║ 3️.  Exit   👋                ║");
+    	System.out.println("║ 3️.  Stats  📊                ║");
+    	System.out.println("║ 4️.  Exit   👋                ║");
     	System.out.println("╚══════════════════════════════╝");
     	
     }

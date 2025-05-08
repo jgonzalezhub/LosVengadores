@@ -37,7 +37,7 @@ public class Player extends Character{
 					if (this.power == 45) action = new PowerfulAttack(action);
 					if (this.power == 30) action = new LightningAttack(action);
 					if (this.power == 50) action = new ReflexAttack(action);
-					if (this.power == 40) action = new WebAttack(action);
+					if (this.power == 40 && this.health<=60) action = new WebAttack(action);
 
 	
 					System.out.println(name + " usa: " + action.getDescription());
@@ -57,6 +57,10 @@ public class Player extends Character{
 				break;
 				
 				case 3:
+					//System.out.println("\n Stats \nNombre: " + this.name+"\n Power: "+ this.power +"\nHealth: "+ this.health +"\nDefense: "+ this.defense+"\n\n");
+					this.showStats();
+				break;
+				case 4:
 					System.out.println("Saliendo......."); // sale del juego 
 					System.exit(0);
 				break;
@@ -68,6 +72,17 @@ public class Player extends Character{
 			
         
     	
+    }
+    
+    public void showStats() {
+    	System.out.println("╔══════════════════════════════╗");
+        System.out.println("║          📊 STATS 📊         ║");
+        System.out.println("╠══════════════════════════════╣");
+        System.out.println("║ Nombre  : " + this.name);
+        System.out.println("║ Poder   : " + this.power);
+        System.out.println("║ Salud   : " + this.health);
+        System.out.println("║ Defensa : " + this.defense);
+        System.out.println("╚══════════════════════════════╝\n");
     }
     
 }
