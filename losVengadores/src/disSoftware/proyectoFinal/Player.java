@@ -38,7 +38,7 @@ public class Player extends Character{
 					if (this.power == 30) action = new LightningAttack(action);
 					if (this.power == 50) action = new ReflexAttack(action);
 					if (this.power == 40) action = new WebAttack(action);
-					
+
 	
 					System.out.println(name + " usa: " + action.getDescription());
 					Integer totalDamage = action.execute(this, opponent);

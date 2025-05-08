@@ -1,6 +1,7 @@
 package disSoftware.proyectoFinal;
 
 public class WebAttack extends ActionDecorator{
+
 	   public WebAttack(Action wrapped) {
 	       super(wrapped);
 	   }
@@ -15,6 +16,6 @@ public class WebAttack extends ActionDecorator{
 	    @Override
 	    public String getDescription() {
 	        return wrapped.getDescription() + " Web attack ";
-	    }
+	    }    
 
 }
