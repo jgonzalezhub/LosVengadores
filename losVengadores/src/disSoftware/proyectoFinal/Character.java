@@ -20,8 +20,7 @@ public abstract class Character {
                      Integer health,
                      Integer defense,
                      String specialText,
-                     Integer specialNumber,
-                     State state){
+                     Integer specialNumber){
        this.name = name;
        this.power = power;
        this.health = health;

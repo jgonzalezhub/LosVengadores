@@ -1,4 +1,4 @@
-package disSoftware.proyectoFinal;
+	package disSoftware.proyectoFinal;
 import java.util.Scanner;
 
 
@@ -9,9 +9,8 @@ public class Player extends Character{
                  Integer health,
                  Integer defense,
                  String specialText,
-                 Integer specialNumber,
-                 State state){
-        super(name, power, health,defense, specialText, specialNumber, state);
+                 Integer specialNumber){
+        super(name, power, health,defense, specialText, specialNumber);
     }
     
     public void performAction(Enemy opponent) {
@@ -38,7 +37,8 @@ public class Player extends Character{
 					if (this.power == 45) action = new PowerfulAttack(action);
 					if (this.power == 30) action = new LightningAttack(action);
 					if (this.power == 50) action = new ReflexAttack(action);
-					// se lo dejo a victor el ultimo ataque 
+					if (this.power == 40) action = new WebAttack(action);
+					
 	
 					System.out.println(name + " usa: " + action.getDescription());
 					Integer totalDamage = action.execute(this, opponent);

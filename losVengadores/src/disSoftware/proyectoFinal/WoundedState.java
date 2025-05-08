@@ -4,7 +4,7 @@ public class WoundedState implements State{
 
 	@Override
 	public void handle(Character character) {
-		System.out.println(character.getName() + "esta HERIDO.");	
+		System.out.println(character.getName() + " está HERIDO.");	
 		character.defense = (int) (character.defense * 0.7);
 	}
 
