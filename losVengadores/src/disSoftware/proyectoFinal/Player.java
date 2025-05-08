@@ -35,8 +35,10 @@ public class Player extends Character{
 				switch(playerAction) {
 				case 1:
 					Action action = new BasicAttack();
-					//if (this.power > 50) action = new PowerfulAttack(action);
-					if (this.power < 40) action = new LightningAttack(action);
+					if (this.power == 45) action = new PowerfulAttack(action);
+					if (this.power == 30) action = new LightningAttack(action);
+					if (this.power == 50) action = new ReflexAttack(action);
+					// se lo dejo a victor el ultimo ataque 
 	
 					System.out.println(name + " usa: " + action.getDescription());
 					Integer totalDamage = action.execute(this, opponent);
