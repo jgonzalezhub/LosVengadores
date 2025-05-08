@@ -4,7 +4,7 @@ public class PlayerFactory implements PlayerFactoryInterface {
 
 	@Override
 	public Player createIronMan() {
-		IronManPlayer ironMan = new IronManPlayer("Iron-Man", 40, 100,20, "JARVIS CLIP THAT", 30, null);
+		IronManPlayer ironMan = new IronManPlayer("Iron-Man", 45, 100,20, "JARVIS CLIP THAT", 30, null);
 		return ironMan;
 	}
 
@@ -22,7 +22,7 @@ public class PlayerFactory implements PlayerFactoryInterface {
 
 	@Override
 	public Player createCaptainAmerica() {
-		Player captainAmerica = new CaptainAmericaPlayer("Captain America", 40, 100,20, "AVENGERS ASSEMBLE", 20, null);
+		Player captainAmerica = new CaptainAmericaPlayer("Captain America", 50, 100,20, "AVENGERS ASSEMBLE", 20, null);
 		return captainAmerica;
 	}
 }
