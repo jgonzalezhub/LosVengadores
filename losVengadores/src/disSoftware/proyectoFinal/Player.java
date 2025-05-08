@@ -23,14 +23,15 @@ public class Player extends Character{
     	DamageCalculator calculator = DamageCalculator.getInstance();
 		playerAction=scanner.nextInt();
       
-		
-		
-		           
-            // Si está paralizado, se podría interrumpir la acción:
-            if (state instanceof ParalyzedState) {
-                System.out.println(name + " está paralizado y no puede actuar.");
-                return;
-            }
+		         
+		if (state != null) {
+		    state.handle(this);
+
+		    if (state instanceof ParalyzedState) {
+		        return; 
+		    }
+		}
+
 				switch(playerAction) {
 				case 1:
 					Action action = new BasicAttack();

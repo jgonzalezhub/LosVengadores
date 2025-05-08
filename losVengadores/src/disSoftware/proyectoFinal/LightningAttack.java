@@ -9,12 +9,12 @@ public class LightningAttack extends ActionDecorator {
     @Override
     public Integer execute(Player attacker, Enemy defender) {
         Integer damage = wrapped.execute(attacker, defender);
-        Integer lightningDamage = 3;       
+        Integer lightningDamage = 15;       
         return damage + lightningDamage;
     }
 
     @Override
     public String getDescription() {
-        return wrapped.getDescription() + " embuido con rayos ";
+        return wrapped.getDescription() + " imbuido con rayos ";
     }
 }

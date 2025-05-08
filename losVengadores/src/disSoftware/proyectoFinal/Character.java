@@ -36,11 +36,8 @@ public abstract class Character {
     	if(health<=0) {
     		health=0;
     		System.out.println(name + " ha sido derrotado.");
-            setState(new ParalyzedState());
-    	}else if (health < 30) {
-    		setState(new WoundedState());
-    	}else {
-    		setState(new ActiveState());
+    	}else if(this.health<=40 && !(this.state instanceof WoundedState)) {
+            this.setState(new WoundedState());
     	}
     }
     
