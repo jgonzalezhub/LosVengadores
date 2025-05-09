@@ -2,7 +2,7 @@ package disSoftware.proyectoFinal;
 import java.util.Scanner;
 
 public class GameController{
-    private DamageCalculator calculator;
+    //private DamageCalculator calculator;
     
 public Player elegirPersonajePlayer(PlayerFactory character) {
     	
@@ -51,6 +51,7 @@ public Player elegirPersonajePlayer(PlayerFactory character) {
 				
 	    	}
     	}
+    	//scanner.close();
     	return jugador;
     }
     
@@ -147,17 +148,24 @@ public Player elegirPersonajePlayer(PlayerFactory character) {
     
     public void play() {
     	// estamos en el primer nivel
-    	Integer number = 0;
+
     	Integer resultadoNivel1;
     	Integer resultadoNivel2;
     	Integer random =(int)(Math.random()*4)+1;
     	//Scanner scanner = new Scanner(System.in);
     	PlayerFactory playerFactory= new PlayerFactory();
     	World1Factory factory= new World1Factory();
+    	InstruccionesInicio inicio= new InstruccionesInicio();
+    
     	Player player;
     	Enemy enemy;
+    	
+    	inicio.showMarvel();
+    	inicio.showTitle();
+    	inicio.showAscii();
+    	inicio.showInstructions();
+    	
     	showCharacters();
-    	//number=scanner.nextInt();
     	player=this.elegirPersonajePlayer(playerFactory);
     	enemy = this.elegirPersonajelevel1(random,factory);
     	System.out.println("Va a comenzar la pelea");
@@ -186,10 +194,13 @@ public Player elegirPersonajePlayer(PlayerFactory character) {
     		System.exit(0);
     	}
     	System.out.println("WINNER WINNER CHICKEN DINNER");
+    	
     }
     
     public void showCaptainAmerica() {
     	String asciiArtCapitan = """
+    			
+    			
     			----------------------:--+%%*####*==---------------------------
     			------------------------%%%*******%%%*=------------------------
     			---------------------=*%*+*++**+*****%%+=----------------------
@@ -236,6 +247,9 @@ public Player elegirPersonajePlayer(PlayerFactory character) {
     public void showSpiderMAn(){
     	String asciiArtSpider = """
     			
+    			
+    			
+    			
     	          .           . .     .                    .           
     	                      ..            . ..+*+=+:..     .  .   .  
     	     ........       .              ..==+#####**#+.......       
@@ -266,6 +280,9 @@ public Player elegirPersonajePlayer(PlayerFactory character) {
     	 .    .                       ..*#%%#+.  .        ..         . 
     	               .    ..          .    . .              .        
     	             .           .      .             .  .      .      
+    	             
+    	             
+    	             
     	 
     		                """;
     		    	System.out.println(asciiArtSpider);    	
@@ -273,6 +290,9 @@ public Player elegirPersonajePlayer(PlayerFactory character) {
     
     public void showThor() {
 		String asciiArtThor = """
+				
+				
+				
 			    
 			     . .     ..-@@@. . .     .   .     .#@*=..  .       .      
 			             :%%-*@:...                .#@**@+.           .    
@@ -319,6 +339,9 @@ public Player elegirPersonajePlayer(PlayerFactory character) {
 			 =@%%#**##%%%%%%###%%@%+*#@@%%%%####%@@@#**#%@@@@%%%%%%%*=.... 
 			 =@%****#%%%%#:....%%@@#*+%@%%%+......*@%%%%%%%%%@@%%%%%%%***:.
 			@%*****%*......   .@@#####@@.....   .   .      . ..............
+			
+			
+			
 				                """;
 				    	System.out.println(asciiArtThor);    	
     }
@@ -326,6 +349,9 @@ public Player elegirPersonajePlayer(PlayerFactory character) {
     public void showIronMan() {
 
 			String asciiArtIron = """
+					
+					
+					
 	                                                 
                        .%@@@#*******#%#@@@@..                  
               .       +@****#####*******###@*.                 
@@ -374,7 +400,10 @@ public Player elegirPersonajePlayer(PlayerFactory character) {
        . .--... ..*@**=-%@*       ..=##%%%%@*.    .     .      
          .--... @@%#**%@:      .  ..=%#%#%#@*          .       
     .    .....  @@#***%@:.        ..:--%###@*        .     .   
-       .        @@#*#%+-..       ...:--.:--..                  
+       .        @@#*#%+-..       ...:--.:--..     
+       
+                    
+                                              
      
 	                """;
     	System.out.println(asciiArtIron);	

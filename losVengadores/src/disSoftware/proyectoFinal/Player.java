@@ -18,7 +18,7 @@ public class Player extends Character{
     	Integer playerAction=0;
     	Scanner scanner = new Scanner(System.in);
     	Integer defense1 = 0;
-    	Integer damage2=0;
+    	//Integer damage2=0;
     	DamageCalculator calculator = DamageCalculator.getInstance();
 		playerAction=scanner.nextInt();
       
@@ -61,7 +61,8 @@ public class Player extends Character{
 					this.showStats();
 				break;
 				case 4:
-					System.out.println("Saliendo......."); // sale del juego 
+					System.out.println("Saliendo.......");
+					scanner.close();// sale del juego 
 					System.exit(0);
 				break;
 				

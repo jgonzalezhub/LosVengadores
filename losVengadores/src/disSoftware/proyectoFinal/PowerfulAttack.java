@@ -8,7 +8,7 @@ public class PowerfulAttack extends ActionDecorator {
 	}
 	
 	public Integer execute(Player attacker, Enemy defender) {
-        Integer damage = (int) (wrapped.execute(attacker, defender)*1.5);
+        Integer damage = (wrapped.execute(attacker, defender)*2);
         return damage;
     }
 
