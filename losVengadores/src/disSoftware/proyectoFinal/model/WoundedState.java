@@ -14,5 +14,5 @@ public class WoundedState implements State{
 	public String getName() {
 		return "Wounded";
 	}
-
+	
 }

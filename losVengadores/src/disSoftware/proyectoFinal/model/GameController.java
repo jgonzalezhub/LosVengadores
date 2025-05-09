@@ -7,7 +7,6 @@ import disSoftware.proyectoFinal.model.player.PlayerFactory;
 import disSoftware.proyectoFinal.view.InstruccionesInicio;
 
 public class GameController{
-    //private DamageCalculator calculator;
     
 public Player elegirPersonajePlayer(PlayerFactory character) {
     	
@@ -56,7 +55,6 @@ public Player elegirPersonajePlayer(PlayerFactory character) {
 				
 	    	}
     	}
-    	//scanner.close();
     	return jugador;
     }
     
@@ -157,7 +155,6 @@ public Player elegirPersonajePlayer(PlayerFactory character) {
     	Integer resultadoNivel1;
     	Integer resultadoNivel2;
     	Integer random =(int)(Math.random()*4)+1;
-    	//Scanner scanner = new Scanner(System.in);
     	PlayerFactory playerFactory= new PlayerFactory();
     	World1Factory factory= new World1Factory();
     	InstruccionesInicio inicio= new InstruccionesInicio();
@@ -183,12 +180,10 @@ public Player elegirPersonajePlayer(PlayerFactory character) {
     	
     	// nivel 2
     	System.out.println("viajando al nivel 2");
-    	//number=0;
     	player=null;
     	enemy=null;
     	World2Factory factoryLvl2= new World2Factory();
     	showCharacters();
-    	//number=scanner.nextInt();
     	player=this.elegirPersonajePlayer(playerFactory);
     	enemy = this.elegirPersonajelevel2(random,factoryLvl2);
     	System.out.println("Va a comenzar la pelea");
